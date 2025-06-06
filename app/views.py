@@ -3,6 +3,11 @@ from rest_framework.response import Response
 from rest_framework import status 
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.http import HttpResponse
+
+def welcome_view(request):
+    return HttpResponse("Welcome to JWT")
+
 
 @api_view(['POST'])
 def register_user(request):
